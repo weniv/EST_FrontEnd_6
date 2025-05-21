@@ -1,0 +1,32 @@
+# 깃헙
+
+## 깃헙이란
+
+* 시간여행이 가능한 구글 드라이브
+* 협업이 가능한 툴
+
+## 상세 명령어
+
+* git clone: 원격에 있는 소스코드 + 관리 이력, 프로젝트 최초에 1번
+* git pull: 원격에서 코드를 가져오는 명령
+* git add: 버전을 만들 파일 지정
+* git commit: 버전을 만드는 명령
+* git push: 깃헙에 파일을 반영하는 명령
+
+## GitHub으로 배포하기
+
+* settings > pages > Branch에서 main을 클릭하시고 save를 누르시면 5분 뒤에 URL이 생깁니다.
+* https://paullabkorea.github.io/testrepo/ -> paullabkorea.github.io/testrepo/index.html
+* https://paullabkorea.github.io/testrepo/a/ -> 생략/testrepo/a/index.html
+* https://paullabkorea.github.io/testrepo/b/ -> 생략/testrepo/b/index.html
+
+## Git 설치하기
+
+* https://git-scm.com/downloads 에서 `Click here to download` 누르시면 됩니다.
+* https://velog.io/@wijoonwu/Mac-OS-%EC%97%90%EC%84%9C-Git-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0
+
+
+## 충돌
+
+* 충돌이 나면 내 것을 쓸 것인지, 들어온 것을 쓸 것인지, 둘 다 쓸 것인지, 비교해서 쓸 것인지 선택한 다음 우측 하단 버튼 누르시면서 활성화된 버튼들 누르시면 합쳐집니다.
+* 주의사항: 추후에 시간여행을 하는 법을 배우게 됩니다. 충돌이 나면 어지러우니 시간을 되돌리는 명령어를 쓰시는 분들이 있습니다.
