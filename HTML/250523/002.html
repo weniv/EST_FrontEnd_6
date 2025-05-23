@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>목록 관련 태그</title>
+    </head>
+    <body>
+        <h2>아침에 일어나서 하는 일 1</h2>
+        <!-- 순서가 중요한 목록 -->
+        <ol type="1">
+            <li>이불 개기</li>
+            <li>화장실 가기</li>
+            <li>물 한잔 마시기</li>
+        </ol>
+        <h2>아침에 일어나서 하는 일 2</h2>
+
+        <ol type="1" start="4" reversed>
+            <li>이불 개기</li>
+            <li>화장실 가기</li>
+            <li>물 한잔 마시기</li>
+        </ol>
+        <!-- 브레드크럼 내비게이션. -->
+        <nav>
+            <ol>
+                <li>
+                    <a href="/">홈</a>
+                </li>
+                <li>
+                    <a href="/products">제품</a>
+                </li>
+                <li>
+                    <a href="/products/laptop">노트북</a>
+                </li>
+                <li>맥북 프로</li>
+            </ol>
+        </nav>
+
+        <!-- 순서가 중요하지 않은 목록 -->
+        <ul>
+            <li>로지</li>
+            <li>지지</li>
+            <li>라이캣</li>
+            <li>소울곰</li>
+        </ul>
+        <!-- 헤더나 사이드바 메뉴 -->
+        <nav>
+            <ul>
+                <li type="i" value="6">
+                    <a href="#home">홈</a>
+                </li>
+                <li>
+                    <a href="#about">소개</a>
+                </li>
+                <li><a href="#services">서비스</a></li>
+            </ul>
+        </nav>
+
+        <dl>
+            <dt>해리 포터</dt>
+            <dd>J.K 롤링의 소설 해리포터 시리즈의 주인공이다.</dd>
+            <dd>마법사로서의 모험을 겪는 소년이다.</dd>
+            <dd>이마에 번개모양의 상처가 있다.</dd>
+            <dd>헤르미온느의 친구이다.</dd>
+        </dl>
+        <dl>
+            <dt>위니브</dt>
+            <dd>제주도에 위치한 ICT 콘텐츠 회사</dd>
+            <dt>설립일</dt>
+            <dd>2000년 0월 0일</dd>
+            <div>
+                <dt>연락처 정보</dt>
+                <dd>
+                    <address>
+                        전화번호: 000-0000-0000 <br />
+                        주소: 구산로 58
+                    </address>
+                </dd>
+            </div>
+        </dl>
+    </body>
+</html>

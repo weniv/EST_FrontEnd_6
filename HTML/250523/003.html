@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>블록 레벨 요소, 인라인 레벨 요소</title>
+        <style>
+            div {
+                border: 1px solid black;
+            }
+
+            span {
+                color: red;
+                font-weight: bold;
+                width: 200px;
+            }
+
+            .block {
+                background-color: aqua;
+            }
+
+            .inline {
+                background-color: coral;
+            }
+
+            button {
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>hello</p>
+            <p>world</p>
+            <p>zeezee</p>
+        </div>
+        <p>
+            Lorem ipsum, <span>dolor</span> <mark>sit</mark> amet consectetur adipisicing elit. Sapiente a eius maiores voluptatem temporibus deserunt, quae amet! Neque expedita consequuntur ratione,
+            minus minima similique ea fugit, ut nobis, reprehenderit facere!
+        </p>
+
+        <div class="block">div</div>
+        <div class="block">div</div>
+        <div class="block">div</div>
+        <!-- 아래와 같이 사용할 수 없음 -->
+        <!-- <span><div></div></span> -->
+        <!-- 아래와 같이 사용가능 -->
+        <!-- <div><span></span></div> -->
+        <!-- a 태그는 예외적으로 내부에 블록 요소 중첩 가능 -->
+        <!-- <a href="#"><div></div></a> -->
+        <span class="inline">span</span>
+        <span class="inline">span</span>
+        <span class="inline">span</span>
+        <span class="inline">span</span>
+        <span class="inline">span</span>
+        <button>button</button><button>button</button><button>button</button><button>button</button>
+    </body>
+</html>
