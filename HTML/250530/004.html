@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>다양한 html 태그들</title>
+    </head>
+    <body>
+        <!-- 0 ~ 100사이의 범위에서 70의 값 -->
+        <p>
+            디스크 사용량:
+            <!-- 내부컨텐츠는 접근성을 위해 작성 -->
+            <meter value="70" min="0" max="100">70%</meter>
+        </p>
+        <p>
+            배터리 사용량:
+            <meter value="20" min="0" max="100" low="30" high="70" optimum="80">20%</meter>
+        </p>
+
+        <label for="file">파일 업로드 진행상황: </label>
+        <progress id="file" value="50" max="100">50%</progress>
+
+        <p>데이터 로드 중 .. <progress></progress></p>
+
+        <h2>작업 진행 상황</h2>
+        <progress id="progressBar" value="0" max="100"></progress>
+        <p id="progressText">0%</p>
+        <button onclick="incrementProgress()">진행</button>
+
+        <button id="showDialogBtn">모달 열기</button>
+        <dialog id="myDialog">
+            <p>만나서 반가워요 여러분!</p>
+            <button id="closeBtn">모달 닫기</button>
+        </dialog>
+
+        <script>
+            const dialog = document.getElementById("myDialog");
+            const showDialogBtn = document.getElementById("showDialogBtn");
+            const closeBtn = document.getElementById("closeBtn");
+
+            showDialogBtn.addEventListener("click", () => {
+                dialog.showModal();
+                console.log("FE 짱짱");
+            });
+
+            closeBtn.addEventListener("click", () => {
+                dialog.close();
+            });
+
+            function incrementProgress() {
+                var progressBar = document.getElementById("progressBar");
+                var progressText = document.getElementById("progressText");
+
+                if (progressBar.value < 100) {
+                    progressBar.value += 10;
+                    progressText.textContent = progressBar.value + "%";
+                }
+
+                if (progressBar.value >= 100) {
+                    alert("완료!");
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>video & audio</title>
+    </head>
+    <body>
+        <!-- <video src="./src/rabbit.MOV" width="300" controls autoplay loop poster="./src/rosy-icon.png"></video> -->
+        <!-- poster. 브라우저, 인터넷 문제로 동영상을 재생할 수 없을 경우 -->
+        <video src="./src/rabbit.MOV" width="300" controls poster="./src/rosy-icon.png"></video>
+
+        <video width="300" controls poster="./src/rosy-icon.png">
+            <source src="./src/rabbit.MOV" type="video/mov" />
+            <source src="./src/rabbit.MOV" type="video/mp4" />
+        </video>
+
+        <!-- type을 지정해주지 않으면 브라우저가 재생가능한 파일인지 확인하는 과정이 필요하므로 트래픽이 낭비 -->
+        <audio src="./src/CatPurr.mp3" controls></audio>
+        <audio controls>
+            <!-- mp3는 mpeg 표준의 일부 -->
+            <source src="./src/CatPurr.mp3" type="audio/mpeg" />
+        </audio>
+    </body>
+</html>
