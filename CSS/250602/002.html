@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            section {
+                /* 텍스트와 관련된 속성들은 상속 */
+                color: red;
+                /* 레이아웃에 관련된 속성들은 상속되지 않음 */
+                border: 3px solid blue;
+            }
+
+            div {
+                /* 부모의 속성을 상속. 주로 상속되지 않는 속성을 강제로 상속시킬 때 */
+                border: inherit;
+                /* 각 속성의 초깃값으로 변경 */
+                color: initial;
+                /* 자연적으로 상속되는 속성 - inherit
+                그렇지 않다면 - initial */
+                /* color: unset; */
+                /* border: unset; */
+                /* 자연적으로 상속되는 속성 - inherit
+                그렇지 않다면 - 강제 상속 x */
+                color: revert;
+                border: revert;
+                /* 모든 속성에 대한 상속값을 한번에 지정 */
+                all: initial;
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            부모
+            <div>자식 1</div>
+            <h1>자식 2</h1>
+            <h2>자식 3</h2>
+        </section>
+        <h1>h1</h1>
+        <h2>h2</h2>
+    </body>
+</html>

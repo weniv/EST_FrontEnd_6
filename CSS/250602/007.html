@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            ul :first-child {
+                color: red;
+            }
+
+            ul :last-child {
+                color: blue;
+            }
+
+            body > :first-child {
+                background-color: salmon;
+            }
+
+            body > :last-child {
+                background-color: salmon;
+            }
+        </style>
+    </head>
+    <body>
+        <div>body의 첫번째 직계자손</div>
+        <ul>
+            <li>1번째 항목</li>
+            <li>2번째 항목</li>
+            <li>3번째 항목</li>
+            <li>4번째 항목</li>
+            <li>5번째 항목</li>
+            <li>6번째 항목</li>
+            <li>7번째 항목</li>
+            <li>8번째 항목</li>
+        </ul>
+        <div>body의 마지막 직계자손</div>
+    </body>
+</html>

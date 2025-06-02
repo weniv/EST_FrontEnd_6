@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            button:focus {
+                background-color: aquamarine;
+            }
+
+            /* 불필요한 시각적 표시를 줄이고, 키보드 사용자에게 현재 위치를 알리기 위함 */
+            button:focus-visible {
+                border: solid 3px hotpink;
+            }
+
+            .form-group {
+                padding: 10px;
+                border: solid 2px gray;
+            }
+
+            /* 사용자가 특정 입력필드에 포커스를 맞출 때 전체 폼 그룹의 스타일 변경 가능 */
+            .form-group:focus-within {
+                background-color: pink;
+                border-color: hotpink;
+            }
+
+            /* 활성화된 상태의 폼 요소 선택 */
+            button:enabled:hover {
+                background-color: lightpink;
+            }
+
+            /* 비활성화된 상태의 폼 요소 선택 */
+            button:disabled {
+                cursor: not-allowed;
+            }
+
+            /* 체크박스나 라디오버튼의 체크된 상태를 선택 */
+            input[type="checkbox"]:checked + label {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <button>button</button>
+
+        <div class="form-group">
+            <label for="name">name: </label>
+            <input type="text" id="name" placeholder="이름을 입력해주세요." />
+        </div>
+
+        <div class="button-group">
+            <button>submit</button>
+            <button disabled>reset</button>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="option1" name="option1" />
+            <label for="option1">option1</label>
+        </div>
+    </body>
+</html>

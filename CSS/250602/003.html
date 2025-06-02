@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 전체 선택자, html 태그를 포함한 모든 태그 선택 */
+            * {
+                color: red;
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            /* 타입 선택자, html 파일 내에 있는 모든 동일한 태그를 선택 */
+            h1 {
+                color: blue;
+            }
+
+            /* id 선택자, id 속성값은 html 페이지 내에서 유일해야  함 */
+            #one {
+                color: green;
+            }
+
+            /* class 선택자, 하나의 요소에 여러 클래스 가능, 클래스 선택자 여러번 사용 가능 > 재사용성이 높음 */
+            .yellow {
+                color: yellow;
+            }
+
+            .blue {
+                background-color: blue;
+            }
+
+            /* 클래스명, 아이디명 작성 규칙
+            1. 숫자로 시작 불가능
+            2. 하이픈, 언더바, 문자로만 시작 가능 */
+
+            /* h1 {
+                border: solid 5px skyblue;
+            }
+
+            h2 {
+                border: solid 5px skyblue;
+            }
+
+            .
+            .
+            .
+            h6 */
+
+            /* 그룹선택자, 위와 동일한 코드 */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                border: solid 5px skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#one">one으로 이동</a>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h2>hello world</h2>
+        <h3 class="yellow blue">hello world</h3>
+        <h4 class="blue">hello world</h4>
+        <h5 class="yellow">hello world</h5>
+        <h6>hello world</h6>
+
+        <p id="one">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem veritatis, nulla commodi in modi tempora incidunt excepturi asperiores porro molestias sit veniam labore facilis
+            maxime illo, aperiam, sed eum officiis?
+        </p>
+    </body>
+</html>

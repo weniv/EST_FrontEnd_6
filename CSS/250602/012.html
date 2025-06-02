@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* h1 a, h2 a, h3 a, h4 a {} */
+            /* :is(h1, h2, h3, h4) a {
+                color: blue;
+            } */
+
+            :where(h1, h2, h3, h4) a {
+                color: red;
+            }
+
+            div:has(a) {
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><a href="">hello</a>world</h1>
+        <h2><a href="">hello</a></h2>
+        <h3><a href="">hello</a></h3>
+        <h4><a href="">hello</a></h4>
+
+        <div>
+            <p>lorem</p>
+        </div>
+        <div><a href="#">click me</a></div>
+    </body>
+</html>
