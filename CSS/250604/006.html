@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            p {
+                /* 절대단위 */
+                font-size: 16px;
+                /* 상대단위 */
+                font-size: 2rem;
+                font-size: 3em;
+
+                /* 절대 크기 키워드 */
+                font-size: xx-small;
+                font-size: large;
+
+                /* 폰트의 굵기 지정 */
+                font-weight: bold;
+                font-weight: 900;
+
+                /* 모든 문자를 대문자로 */
+                text-transform: uppercase;
+                /* 모든 문자를 소문자로 */
+                text-transform: lowercase;
+                /* 단어의 첫문자를 대문자로 */
+                text-transform: capitalize;
+            }
+
+            span {
+                /* 부모 요소 기준 상대 크기 키워드 */
+                font-size: larger;
+                font-size: smaller;
+            }
+
+            a {
+                /* 텍스트를 장식하는 속성 */
+                text-decoration: none;
+                /* text-decoration-line: overline underline line-through;
+                text-decoration-color: red;
+                text-decoration-style: wavy;
+                text-decoration-thickness: 5px; */
+                /* text-decoration: red overline underline line-through wavy 5px; */
+
+                /* 텍스트의 그림자 스타일 */
+                /* 가로거리 세로거리 번짐정도 색상 */
+                text-shadow: 10px 10px 5px gray, -10px -10px 5px lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam assumenda dolorem fugit aut qui modi reiciendis esse. Iure maiores incidunt exercitationem quos voluptates ullam optio, ut
+            tenetur. Quaerat, placeat nostrum.
+            <span> lorem </span>
+            <br />
+            <a href="#">여기를 클릭하세요</a>
+        </p>
+    </body>
+</html>

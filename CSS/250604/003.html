@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            html {
+                font-size: 10px;
+            }
+
+            /* root em의 약자. <html>태그의 폰트사이즈 기준 */
+            .rem {
+                font-size: 2rem;
+            }
+
+            .em {
+                font-size: 16px;
+            }
+
+            /* em. 부모 요소에게서 상속받은 폰트사이즈 기준 */
+            .em div {
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat tempora exercitationem autem ex deserunt quo, ipsum hic labore similique quis, natus incidunt architecto quasi corporis
+        expedita modi! Eligendi, debitis nobis.
+        <div class="rem">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis natus obcaecati asperiores? A, voluptatibus numquam? Aut consequatur adipisci quas. Repellat, officiis modi? Vitae
+            adipisci autem quia quidem nihil earum quasi!
+        </div>
+
+        <div class="em">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, molestiae! Similique vero perferendis impedit nesciunt neque, accusantium laborum placeat provident fuga doloribus at
+            debitis maiores maxime iste nulla recusandae consequatur.
+            <div>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis dolores aperiam voluptate vero, at impedit labore temporibus quo nesciunt voluptatibus quia eveniet ullam. Inventore
+                atque nostrum, sapiente eum recusandae ducimus.
+            </div>
+        </div>
+    </body>
+</html>

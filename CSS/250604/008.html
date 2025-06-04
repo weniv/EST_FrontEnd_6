@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            p {
+                /* 행간 조절 1.5~2 사이가 가독성이 좋음 */
+                line-height: 2;
+                line-height: 20px;
+                /* 자간 조절 */
+                /* letter-spacing: 20px; */
+            }
+
+            span {
+                display: inline-block;
+                line-height: 2.5;
+                background-color: lightcoral;
+            }
+
+            span > span {
+                line-height: 1;
+                background-color: lightgreen;
+            }
+
+            span .baseline {
+                vertical-align: baseline;
+            }
+
+            span .top {
+                vertical-align: top;
+            }
+
+            span .bottom {
+                vertical-align: bottom;
+            }
+
+            span .text-top {
+                vertical-align: text-top;
+            }
+
+            span .text-bottom {
+                vertical-align: text-bottom;
+            }
+
+            p {
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptatum dolorem, amet harum, id laboriosam nostrum architecto repellat aliquid minima autem? Eaque est inventore iste quod,
+            odit dignissimos eos molestiae!
+        </p>
+
+        <span>
+            텍스트
+            <span class="box baseline">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box top">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box bottom">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box text-top">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box text-bottm">baseline</span>
+        </span>
+    </body>
+</html>

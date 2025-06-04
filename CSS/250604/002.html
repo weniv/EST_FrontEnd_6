@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            /* 절대단위. 이미지를 표현하는 가장 작은 단위 */
+            .px {
+                width: 500px;
+                background-color: lightblue;
+            }
+
+            /* 부모 요소의 해당 속성값을 기준 */
+            .percent {
+                width: 50%;
+                background-color: lightcoral;
+            }
+
+            /* 뷰포트의 너비 기준, 100vw = 브라우저 너비 */
+            .vw {
+                width: 50vw;
+                background-color: lightgray;
+            }
+
+            /* 뷰포트의 높이 기준, 100vh = 브라우저 높이 */
+            .vh {
+                height: 50vh;
+                background-color: lightgreen;
+            }
+
+            /* 뷰포트의 높이, 너비 중 더 작은 값을 기준 */
+            .vmin {
+                width: 50vmin;
+                background-color: lightpink;
+            }
+
+            /* 뷰포트의 높이, 너비 중 더 큰 값을 기준 */
+            .vmax {
+                width: 50vmax;
+                background-color: limegreen;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="px">
+            <strong>div width: 500px;</strong>
+            <br />
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis nulla aspernatur non nobis error. Tenetur fugit modi hic maiores aliquid eveniet voluptatem quas, odio incidunt, quod in
+            soluta, nobis laboriosam!
+        </div>
+
+        <br />
+        <div class="px">
+            <strong>div width: 500px;</strong>
+            <br />
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis nulla aspernatur non nobis error. Tenetur fugit modi hic maiores aliquid eveniet voluptatem quas, odio incidunt, quod in
+            soluta, nobis laboriosam!
+            <div class="percent">
+                <strong>div width: 50%;</strong>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa atque veritatis maiores optio minima sint quod. Repellendus saepe temporibus inventore expedita ex sed eligendi quod
+                culpa incidunt! Corrupti, id modi.
+            </div>
+        </div>
+        <br />
+        <div class="vw">
+            <strong>div width: 50vw;</strong>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut voluptas sint, quisquam libero delectus quod inventore dolores magni minus tempore commodi molestiae quis minima dolore ab
+            consequatur assumenda totam asperiores.
+        </div>
+        <div class="vh">
+            <strong>div hight: 50vh;</strong>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut voluptas sint, quisquam libero delectus quod inventore dolores magni minus tempore commodi molestiae quis minima dolore ab
+            consequatur assumenda totam asperiores.
+        </div>
+
+        <div class="vmin">
+            <strong>div width: 50vmin;</strong>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia deserunt beatae, excepturi eius ab fugiat modi nihil odit quisquam in, labore assumenda. Quaerat alias sunt facilis
+            dolores, reiciendis error maxime!
+        </div>
+
+        <div class="vmax">
+            <strong>div width: 50vmax;</strong>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia deserunt beatae, excepturi eius ab fugiat modi nihil odit quisquam in, labore assumenda. Quaerat alias sunt facilis
+            dolores, reiciendis error maxime!
+        </div>
+    </body>
+</html>
