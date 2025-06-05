@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            ul {
+                /* 마커의 모양 변경 */
+                list-style-type: upper-roman;
+                padding: 10px;
+                background-color: lavenderblush;
+                /* width: 30px; */
+            }
+
+            .image-list {
+                /* 마커의 위치 지정. 들여쓰기, 줄바꿈 동작에 영향을 미침 */
+                list-style-position: inside;
+                background-color: lightsalmon;
+                /* 마커로 사용할 이미지 지정 */
+                list-style-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' height='20' width='20' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'><polyline points='20 6 9 17 4 12'></polyline></svg>");
+                /* list-style-image: url("https://cdn-icons-png.flaticon.com/512/5291/5291043.png"); */
+                list-style: none;
+            }
+
+            .image-list li::before {
+                content: "✅ ";
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+        </ul>
+
+        <ul class="image-list">
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+        </ul>
+    </body>
+</html>

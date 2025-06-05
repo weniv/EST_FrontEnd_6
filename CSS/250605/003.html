@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .box1 {
+                background-color: red;
+                height: 100px;
+                width: 100px;
+            }
+
+            .box2 {
+                border: solid 1px black;
+                background-color: lightblue;
+                /* 콘텐트와 테두리 사이의 내부 여백 */
+                /* 상 우 하 좌 */
+                padding: 10px 20px 30px 40px;
+                /* 상하 좌우 */
+                padding: 50px 10px;
+                /* 상 좌우 하 */
+                padding: 10px 50px 20px;
+                /* 상하좌우 */
+                padding: 10px;
+                padding-bottom: 100px;
+
+                /* 테두리 바깥의 외부 여백 */
+                /* 작성 순서는 padding과 동일 */
+                /* margin: 10px; */
+                /* margin-left: 100px; */
+                width: 100px;
+                /* margin: auto; */
+                margin-left: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1">hello world</div>
+        <div class="box2">hello world</div>
+    </body>
+</html>

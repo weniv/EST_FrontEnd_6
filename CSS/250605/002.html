@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .parent {
+                width: 300px;
+                background-color: gray;
+            }
+
+            /* 너비의 기본값은 auto. 부모 요소 너비 기준으로 꽉 채움 */
+            .child {
+                background-color: lightcoral;
+                /* 요소가 가질 수 있는 최소 너비 */
+                width: min-content;
+                /* 컨텐츠 내용의 선호 너비 */
+                width: max-content;
+                /* min(max-content, max(min-content, 길이값)) */
+                width: fit-content;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent">
+            <div class="child">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum velit cum ullam, veritatis corrupti maiores tempore quaerat ipsa rem sunt animi suscipit reprehenderit perspiciatis
+                distinctio ab laborum facere quasi asperiores!
+            </div>
+        </div>
+    </body>
+</html>

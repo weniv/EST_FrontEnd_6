@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 1000px;
+                height: 1000px;
+                /* border: dotted 30px black; */
+                padding: 50px;
+                background-color: lightcoral;
+
+                /* 배경이 어디까지 차지할 것인지 */
+                /* 기본값. border 영역까지 배경이 차지 */
+                /* background-clip: border-box; */
+                /* padding영역까지 배경이 차지 */
+                /* background-clip: padding-box; */
+                /* content영역까지 배경이 차지 */
+                /* background-clip: content-box; */
+
+                /* ----------------- */
+                /* background-image: url("./images/bg.png"); */
+                /* background-repeat: no-repeat; */
+                /* 이미지의 시작점 조정 */
+                /* border영역의 좌측 상단 */
+                /* background-origin: border-box; */
+                /* 기본값. padding영역의 좌측 상단 */
+                /* background-origin: padding-box; */
+                /* content영역의 좌측 상단 */
+                /* background-origin: content-box; */
+
+                /* 아래 속성이 설정된 경우 background-origin속성은 무시됨 */
+                /* background-attachment: fixed; */
+
+                background: linear-gradient(90deg, lightcoral, lightblue);
+                background: #020024;
+                background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>

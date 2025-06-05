@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 1000px;
+                height: 1000px;
+                border: solid 5px black;
+
+                /* 배경의 이미지 설정 */
+                background-image: url("./images/image.png");
+                /* 배경 이미지를 반복하는 방식 */
+                /* 반복하지 않음 */
+                background-repeat: no-repeat;
+                /* x축(가로)으로 반복 */
+                background-repeat: repeat-x;
+                /* y축(세로)으로 반복 */
+                background-repeat: repeat-y;
+                /* 이미지의 크기조절 x, 동일한 여백을 두고 반복 */
+                background-repeat: space;
+                /* 이미지의 크기가 조절, 여백없이 반복 */
+                background-repeat: round;
+
+                /* -------------------- */
+                background-repeat: no-repeat;
+                /* 배경의 이미지 위치 조정 */
+                /* 좌측 상단에서 얼마나 떨어질지 위치 조정. 가로 세로. */
+                background-position: 100px 300px;
+                background-position: center;
+                background-position: 0% 0%;
+                background-position: 100% 100%;
+                background-position: right bottom;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
