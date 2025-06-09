@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                border: solid 3px black;
+                /* height: 300px; */
+                /* overflow: hidden; */
+            }
+
+            .clearfix::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            img {
+                width: 100px;
+                float: left;
+            }
+
+            h2 {
+                float: right;
+            }
+
+            p {
+                /* clear: right;
+                clear: left;
+                clear: both; */
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container clearfix">
+            <h2>hello</h2>
+            <img src="./img/weniv-binky.png" alt="" />
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quia magnam blanditiis est sint molestiae omnis quisquam expedita rem, laboriosam maiores accusantium numquam
+                quaerat fugit corporis ratione animi eos sunt?
+            </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quia magnam blanditiis est sint molestiae omnis quisquam expedita rem, laboriosam maiores accusantium numquam
+                quaerat fugit corporis ratione animi eos sunt?
+            </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, quia magnam blanditiis est sint molestiae omnis quisquam expedita rem, laboriosam maiores accusantium numquam
+                quaerat fugit corporis ratione animi eos sunt?
+            </p>
+        </div>
+    </body>
+</html>

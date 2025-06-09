@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 1. aspect-ratio 사용하는 방법 */
+            /* 비교적 최근에 등장한 기술, 더 간편하고 직관적 */
+            /* img {
+                width: 200px;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+            } */
+
+            /* 2. padding 백분율 사용하는 방법 */
+            /* 호환성, 일관성 유지를 위해 사용을 하는 경우가 많음 */
+            .thumbnail {
+                width: 200px;
+                height: 0;
+                padding-top: 50%;
+                position: relative;
+            }
+
+            .thumbnail img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                /* 위치 조정을 통해 적절한 이미지를 보여줄 수 있음 */
+                /* object-position: 0 50px; */
+            }
+        </style>
+    </head>
+    <body>
+        <img src="https://newsimg.sedaily.com/2023/03/09/29MYLNYQCV_1.jpg" alt="샘플 이미지" />
+        <div class="thumbnail">
+            <img src="https://i.namu.wiki/i/ZnBMAAGJaiFKqDmASXCt-977Xuq6gLA-G8AsD4K1BKCVBEzrjISoW9QyfcSKPnacwuBpCGSSyBtCJv8E-UocNQ.webp" alt="" />
+        </div>
+    </body>
+</html>
