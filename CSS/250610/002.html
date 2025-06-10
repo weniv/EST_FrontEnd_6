@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                height: 100vh;
+                background-color: gainsboro;
+
+                display: flex;
+
+                /* 한 줄에 배치할것인지, 여러 줄에 배치할 것인지 */
+                flex-wrap: wrap;
+                /* flex-wrap: wrap-reverse; */
+
+                /* flex-wrap: wrap; 설정이 되어있고, flex-item들이 여러 줄인 경우의 교차축 기준 정렬 */
+                align-content: flex-start;
+                align-content: center;
+                align-content: flex-end;
+                align-content: space-between;
+                align-content: space-around;
+                align-content: space-evenly;
+                align-content: stretch;
+
+                /* 아이템 사이의 간격을 조정 */
+                gap: 50px;
+                /* 행 열 순서 */
+                gap: 50px 100px;
+
+                flex-direction: column;
+                flex-wrap: nowrap;
+                /* 위 아래 동일한 속성. direction, wrap의 단축 속성 */
+                flex-flow: column nowrap;
+            }
+
+            .item {
+                width: 100px;
+                /* height: 100px; */
+                font-size: 32px;
+                text-align: center;
+                line-height: 100px;
+            }
+
+            .item:nth-child(odd) {
+                background-color: lightskyblue;
+            }
+
+            .item:nth-child(even) {
+                background-color: lightpink;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+        </div>
+    </body>
+</html>
