@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                display: grid;
+                gap: 10px;
+                /* 행간 열간 */
+                /* gap: 10px 30px; */
+                padding: 10px;
+            }
+
+            .auto-fill {
+                background-color: lightblue;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .auto-fit {
+                background-color: lightpink;
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            .item {
+                background-color: black;
+                color: #fff;
+                font-size: 32px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container auto-fill">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </div>
+        <div class="container auto-fit">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </div>
+    </body>
+</html>
