@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .item {
+                margin: 50px;
+                width: 100px;
+                height: 100px;
+                background-color: lightgreen;
+            }
+
+            .item:hover {
+                background-color: lightcoral;
+                transform: scale(1.5);
+                font-size: 3em;
+
+                transition-duration: 3s;
+                transition-property: background-color;
+                transition-property: all;
+                transition-timing-function: ease-in-out;
+                transition-timing-function: cubic-bezier(0.39, 0.04, 0, 1.37);
+                transition-timing-function: steps(8);
+                transition-delay: 2s;
+                transition-delay: -2s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="item">item</div>
+    </body>
+</html>
