@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                perspective: 500px;
+                padding: 100px;
+            }
+
+            .item {
+                width: 200px;
+                height: 200px;
+                background-color: lightcoral;
+                transition: all 1s;
+            }
+
+            .item:hover {
+                /* transform: translateZ(100px); */
+                /* transform: rotateX(45deg);
+                transform: rotateY(45deg);
+                transform: rotateZ(45deg); */
+
+                transform: scaleX(2);
+                transform: scaleY(2);
+                transform: scaleZ(2);
+                /* transform: translateZ(100px) rotateX(45deg) scaleZ(2); */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item"></div>
+        </div>
+    </body>
+</html>

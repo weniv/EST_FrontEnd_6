@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                display: flex;
+                gap: 50px;
+                background-color: #eee;
+
+                /* 3D 공간의 깊이(z축 선상의 사용자의 위치) 지정 */
+                perspective: 500px;
+                perspective: 100px;
+                perspective: 1000px;
+            }
+
+            .item {
+                width: 150px;
+                height: 100px;
+                background-color: lightcoral;
+                border: solid 1px black;
+
+                /* transform: rotateX(40deg); */
+                /* transform: rotateY(40deg); */
+                transform: rotateZ(40deg);
+                transform: rotate(40deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </body>
+</html>

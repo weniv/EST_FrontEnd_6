@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                display: flex;
+                gap: 20px;
+                padding: 50px;
+                background-color: #eee;
+                perspective: 500px;
+            }
+
+            .item {
+                width: 100px;
+                height: 100px;
+                background-color: lightcoral;
+                border: solid 1px black;
+            }
+
+            .translate-container .item:nth-child(1) {
+                transform: translate3d(0, 0, 0);
+            }
+
+            .translate-container .item:nth-child(2) {
+                transform: translate3d(50px, 0, 0);
+            }
+
+            .translate-container .item:nth-child(3) {
+                transform: translate3d(0, -30px, 0);
+            }
+
+            .translate-container .item:nth-child(4) {
+                transform: translate3d(0, 0, 100px);
+            }
+
+            .translate-container .item:nth-child(5) {
+                transform: translate3d(50px, -30px, 100px);
+            }
+
+            .rotate-container .item:nth-child(1) {
+                transform: rotate3d(0, 0, 0, 0);
+            }
+
+            .rotate-container .item:nth-child(2) {
+                transform: rotate3d(1, 0, 0, 45deg);
+            }
+
+            .rotate-container .item:nth-child(3) {
+                transform: rotate3d(0, 1, 0, 45deg);
+            }
+
+            .rotate-container .item:nth-child(4) {
+                transform: rotate3d(0, 0, 1, 45deg);
+            }
+
+            .rotate-container .item:nth-child(5) {
+                transform: rotate3d(1, 1, 1, 45deg);
+            }
+
+            .scale-container .item:nth-child(2) {
+                transform: scale3d(1.5, 1, 1);
+            }
+
+            .scale-container .item:nth-child(3) {
+                transform: scale3d(1, 1.5, 1);
+            }
+
+            .scale-container .item:nth-child(4) {
+                transform: scale3d(1, 1, 4) rotateY(45deg);
+            }
+        </style>
+    </head>
+    <body>
+        <h2>translate3d</h2>
+        <div class="container translate-container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <h2>rotate3d</h2>
+        <div class="container rotate-container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <h2>scale3d</h2>
+        <div class="container scale-container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </body>
+</html>
