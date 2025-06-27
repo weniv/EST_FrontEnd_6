@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+</head>
+
+<body>
+    <h1>버튼을 클릭하세요</h1>
+    <input type="color" id="userColor">
+    <input type="text" id="input">
+    <button type="button" id="btn">클릭</button>
+    <p id="result"></p>
+
+    <script>
+        // 버튼을 클릭하면, 사용자가 입력한 글을 #result에 출력하겠다.
+
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result')
+        const input = document.getElementById('input')
+        const color = document.getElementById('userColor')
+
+        btn.style.backgroundColor = 'red'
+
+
+        btn.addEventListener('click', function (e) {
+            console.log(e.target)
+            console.log(e.currentTarget)
+            result.textContent = input.value;
+        })
+
+        input.addEventListener('input', function (e) {
+            result.textContent = e.target.value;
+        })
+
+        // 컬러박스에 컬러를 선택(input) 하면, 그 값을 result에 출력하세요
+        color.addEventListener('input', function (e) {
+            document.body.style.backgroundColor = e.target.value;
+        })
+
+
+        /* input, change */
+        /**
+         * 과제 1 ) bodyChangeColor.html 셀렉트태그 이용 (색상을 여러가지 지정) 
+         * 과제 2 ) guessNumber.html 숫자맞추기(랜덤수 생성후, 확인버튼을 누를때마다, '크다','작다','정답' 출력하기
+        */
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

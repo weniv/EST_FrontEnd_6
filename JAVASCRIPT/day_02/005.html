@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 버튼 3개 '가위','바위', '보'-->
+    <button type="button" onclick="playGame('가위')">가위</button>
+    <button type="button" onclick="playGame('바위')">바위</button>
+    <button type="button" onclick="playGame('보')">보</button>
+
+    <p id="result"></p>
+
+    <script>
+        // 각각의 버튼을 클릭했을때에 '가위','바위',보'라는 각각의 텍스트를 콘솔에 출력하시오.
+
+        const rsp = ['가위', '바위', '보'];
+        const result = document.getElementById('result');
+        function playGame(userChoice) {
+            const aiChoice = rsp[Math.floor(Math.random() * rsp.length)];
+
+            // 출력결과 메세지
+            let message = ''
+
+            const userWin =
+                (userChoice === '가위' && aiChoice === '보') ||
+                (userChoice === '바위' && aiChoice === '가위') ||
+                (userChoice === '보' && aiChoice === '바위')
+
+            if (aiChoice === userChoice) {
+                message = '비겼습니다.'
+            } else if (userWin) {
+                message = '사용자가 이겼습니다.'
+            } else {
+                message = '사용자가 졌습니다.'
+            }
+
+
+            result.textContent = `게임결과 :  ${message}`
+        }
+
+
+
+    </script>
+</body>
+
+</html>

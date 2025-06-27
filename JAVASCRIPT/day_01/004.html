@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="targetPx" placeholder="target px">
+    <button type="button" onclick="pxToEm();">EM계산하기</button>
+    <script>
+        const input = document.getElementById('targetPx')
+
+        function pxToEm() {
+            const target = +input.value;
+            const em = target / 16;
+            console.log(`${target}px -> ${em}em`);
+        }
+
+    </script>
+</body>
+
+</html>

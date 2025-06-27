@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, Javascript</title>
+
+</head>
+
+<body>
+    <h1>Javascript Console</h1>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>SCSS</li>
+    </ul>
+    <script>
+
+        // 3가지 - var, let ,const 키워드
+
+        const li = document.getElementsByTagName('li');
+
+
+        console.log(li[2].textContent);
+        li[2].textContent = '자바스크립트<button>버튼</button>';
+        console.log(li[2].textContent);
+
+        li[2].innerHTML = '자바스크립트<button>버튼</button>';
+        console.log(li[2].innerHTML);
+    </script>
+
+</body>
+
+</html>
