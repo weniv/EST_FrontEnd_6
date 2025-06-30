@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>Html</li>
+        <li>Css</li>
+        <li>Javascript</li>
+        <li>Scss</li>
+        <li>jQuery</li>
+    </ul>
+
+    <script>
+        /* querySelector, querySelectorAll */
+        const lis = document.querySelectorAll('li')
+        // lis -> NodeList -> [ 'li','li','li','li','li']
+
+        // for문으로 li의 컨텐츠 콘솔에 찍기 -> .textContent, .innerHTML
+        for (let i = 0; i < lis.length; i++) {
+            console.log(lis[i].textContent)
+        }
+
+        // forEach문으로 li의 컨텐츠 콘솔에 찍기
+        lis.forEach(li => {
+            console.log(li.textContent)
+        })
+    </script>
+</body>
+
+</html>
