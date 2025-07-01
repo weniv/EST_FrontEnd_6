@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button type="button" id="button">확인</button>
+    <ul id="list"></ul>
+
+    <script>
+        // 버튼을 클릭하면, input태그에 입력된 값을 가져와서, ul태그 안에 출력하고싶다.
+        const input = document.getElementById('input')
+        const btn = document.getElementById('button')
+        const ul = document.getElementById('list')
+
+        let memoList = []
+
+        btn.addEventListener('click', (e) => {
+            // memoList update
+            const memo = input.value.trim();
+            memoList.push(memo)
+            renderList()
+            console.log(memoList)
+        })
+
+        function renderList() {
+            // screen redering
+            ul.innerHTML = '';
+            memoList.forEach(inputMemu => {
+                const li = document.createElement('li')
+                li.textContent = inputMemu
+
+                const btn = document.createElement('button')
+                btn.textContent = 'Delete'
+                btn.addEventListener('click', () => {
+                    console.log('Deleted!!')
+                })
+
+                li.appendChild(btn)
+                ul.appendChild(li)
+            })
+        }
+
+    </script>
+</body>
+
+</html>
