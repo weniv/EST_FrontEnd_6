@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 마우스 위치 및 움직임 예제</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dom.css">
+</head>
+
+<body>
+    <div class="container mouse-demo-container">
+        <h1>마우스 위치 및 움직임 실습</h1>
+        <div class="mouse-info-fixed" id="mouseInfo">
+            X: <span id="mouseX">0</span>px<br>
+            Y: <span id="mouseY">0</span>px
+        </div>
+        <div class="mouse-area" id="mouseArea">
+            <p>이 영역에서 마우스를 움직여보세요!</p>
+            <div class="mouse-area-status" id="mouseAreaStatus">영역 밖</div>
+        </div>
+        <div class="drag-demo">
+            <div class="drag-box" id="dragBox">
+                드래그해보세요
+            </div>
+        </div>
+        <div class="drag-demo">
+            <img src="./images/irangi_01.png" alt="irangi" class="drag-box-img">
+
+        </div>
+    </div>
+
+    <script>
+        const mouseX = document.getElementById('mouseX')
+        const mouseY = document.getElementById('mouseY')
+ 
+        document.addEventListener('mousemove', (e) => {
+            mouseX.textContent = e.clientX;
+            mouseY.textContent = e.clientY;
+        })
+
+        const mouseArea = document.getElementById('mouseArea')
+        const mouseText = document.getElementById('mouseAreaStatus')
+        // in -> active 클래스를 추가, 텍스트 -> 영역 안
+        // out -> active 클래스를 삭제, 텍스트 -> 영역 밖
+
+        mouseArea.addEventListener('mouseenter', (e) => {
+            e.target.classList.add('active')
+            mouseText.textContent = '영역 안'
+        })
+        mouseArea.addEventListener('mouseleave', (e) => {
+            e.target.classList.remove('active')
+            mouseText.textContent = '영역 밖'
+        })
+
+    </script>
+</body>
+
+</html>

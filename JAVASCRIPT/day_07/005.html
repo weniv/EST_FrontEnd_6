@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 스크롤 아티클 이동 예제</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dom.css">
+</head>
+
+<body>
+    <aside class="scroll-fixed-controls" aria-label="아티클 이동 버튼">
+        <button class="scroll-btn" data-article="1" aria-label="아티클 1로 이동"><i class="fa-solid fa-1"></i></button>
+        <button class="scroll-btn" data-article="2" aria-label="아티클 2로 이동"><i class="fa-solid fa-2"></i></button>
+        <button class="scroll-btn" data-article="3" aria-label="아티클 3로 이동"><i class="fa-solid fa-3"></i></button>
+        <button class="scroll-btn" data-article="4" aria-label="아티클 4로 이동"><i class="fa-solid fa-4"></i></button>
+        <button class="scroll-btn" data-article="5" aria-label="아티클 5로 이동"><i class="fa-solid fa-5"></i></button>
+    </aside>
+    <div class="scroll-info-fixed" id="scrollInfo">
+        현재 스크롤 위치: <span id="scrollY">0</span>px
+    </div>
+    <div class="container scroll-demo-container">
+        <h1>스크롤 아티클 이동 실습</h1>
+        <div class="scroll-content" id="scrollContent">
+            <article id="article1" class="scroll-article">
+                <h2>아티클 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+                    consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.</p>
+                <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                    consectetur nisl nisi euismod nisi.</p>
+                <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                    consectetur.</p>
+                <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl
+                    nisi euismod nisi.</p>
+                <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                    consectetur nisl nisi euismod nisi.</p>
+                <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                    consectetur.</p>
+            </article>
+            <article id="article2" class="scroll-article">
+                <h2>아티클 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+                    consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.</p>
+                <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                    consectetur nisl nisi euismod nisi.</p>
+                <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                    consectetur.</p>
+                <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl
+                    nisi euismod nisi.</p>
+                <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                    consectetur nisl nisi euismod nisi.</p>
+                <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                    consectetur.</p>
+            </article>
+            <article id="article3" class="scroll-article">
+                <h2>아티클 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+                    consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.</p>
+                <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                    consectetur nisl nisi euismod nisi.</p>
+                <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                    consectetur.</p>
+                <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl
+                    nisi euismod nisi.</p>
+                <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                    consectetur nisl nisi euismod nisi.</p>
+                <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                    consectetur.</p>
+            </article>
+            <article id="article4" class="scroll-article">
+                <h2>아티클 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+                    consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.</p>
+                <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                    consectetur nisl nisi euismod nisi.</p>
+                <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                    consectetur.</p>
+                <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl
+                    nisi euismod nisi.</p>
+                <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                    consectetur nisl nisi euismod nisi.</p>
+                <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                    consectetur.</p>
+            </article>
+            <article id="article5" class="scroll-article">
+                <h2>아티클 5</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+                    consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.</p>
+                <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                    consectetur nisl nisi euismod nisi.</p>
+                <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                    consectetur.</p>
+                <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl
+                    nisi euismod nisi.</p>
+                <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                    consectetur nisl nisi euismod nisi.</p>
+                <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                    consectetur.</p>
+            </article>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

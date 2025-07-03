@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트, 이벤트위임</title>
+    <link rel="stylesheet" href="./css/dom.css">
+    <style>
+        .btn {
+            background-color: #e8e8e8
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all-container">
+        <div class="menu-container">
+            <button class="btn">
+                <img src="./images/irangi_01.png" alt="irangi">
+            </button>
+            <button class="btn">
+                <img src="./images/irangi_02.png" alt="irangi">
+            </button>
+            <button class="btn">
+                <img src="./images/irangi_03.png" alt="irangi">
+            </button>
+        </div>
+    </div>
+
+    <ul id="list">
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ul>
+
+    <p id="p">
+        Hello world
+        <span>SPAN</span>
+        <strong>STRONG</strong>
+    </p>
+
+    <div id="testBox">
+        <strong>STRONG</strong>
+        <em>EM</em>
+        <p>Paragraph</p>
+    </div>
+
+    <!-- testBox에 클릭이벤트가 발생하면, 그타넷이 EM 일때만 콘솔에 '클릭'을 출력 -->
+
+    <script>
+        const menu = document.querySelector('.menu-container')
+        const p = document.getElementById('p')
+        // const p = document.querySelector('#p')
+
+        function doSomething(e) {
+            const isTarget = e.target.nodeName === 'STRONG';
+            if (isTarget) {
+                console.log('That\'s Strong')
+            }
+        }
+
+        p.addEventListener('click', doSomething)
+
+        function menuHandler(e) {
+            if (e.target.nodeName === 'BUTTON') {
+                const contents = e.target.innerHTML
+                alert(contents)
+            }
+        }
+
+        menu.addEventListener('click', menuHandler)
+
+        const list = document.getElementById('list')
+        list.addEventListener('click', (e) => {
+            console.log(e.target.textContent)
+        })
+    </script>
+</body>
+
+</html>

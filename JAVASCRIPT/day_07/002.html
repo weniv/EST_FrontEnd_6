@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/dom.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>DOM 이벤트</h1>
+        <button id="alertBtn">클릭 이벤트 (Alert)</button>
+        <div class="input-group">
+            <label for="inputBox">실시간 입력 이벤트</label>
+            <input type="text" id="inputBox" placeholder="여기에 입력...">
+            <div id="output"></div>
+        </div>
+        <div class="color-box-label">마우스를 올려보세요</div>
+        <div id="colorBox">Hover me!</div>
+    </div>
+
+    <script>
+        // alertBtn아이디를 가진 버튼을 클릭하면 alert('버튼이 클릭되었어요') 띄우기
+        const btn = document.getElementById('alertBtn')
+        const inputBox = document.getElementById('inputBox')
+        const output = document.getElementById('output')
+        const colorBox = document.getElementById('colorBox')
+
+
+        function btnHandler() {
+            alert('버튼이 클릭되었습니다.')
+        }
+
+        function printInput(e) {
+            const inputMsg = e.target.value;
+            output.textContent = `입력값 : ${inputMsg}`;
+        }
+
+        function overHandler(e) {
+            // active클래스를 추가
+            e.target.classList.add('active')
+            e.target.textContent = '🐶 마우스 IN'
+        }
+
+        function outHandler(e) {
+            // active클래스를 제거
+            e.target.classList.remove('active')
+            e.target.textContent = 'Hover me!'
+        }
+
+
+        btn.addEventListener('click', btnHandler)
+        inputBox.addEventListener('input', printInput)
+        colorBox.addEventListener('mouseenter', overHandler)
+        colorBox.addEventListener('mouseleave', outHandler)
+    </script>
+</body>
+
+</html>

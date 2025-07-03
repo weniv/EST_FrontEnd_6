@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Event</title>
+    <link rel="stylesheet" href="./css/dom.css">
+
+</head>
+
+<body>
+    <aside class="scroll-fixed-controls" aria-label="스크롤 제어 버튼">
+        <button class="scroll-btn" id="scrollTopBtn" aria-label="맨 위로 이동"><i class="fa-solid fa-arrow-up"></i></button>
+        <button class="scroll-btn" id="scrollMiddleBtn" aria-label="중간으로 이동"><i
+                class="fa-solid fa-arrows-up-down"></i></button>
+        <button class="scroll-btn" id="scrollBottomBtn" aria-label="맨 아래로 이동"><i
+                class="fa-solid fa-arrow-down"></i></button>
+    </aside>
+    <div class="scroll-info-fixed" id="scrollInfo">
+        현재 스크롤 위치: <span id="scrollY">0</span>px
+    </div>
+    <div class="container scroll-demo-container">
+        <h1>스크롤 이벤트 실습</h1>
+        <div class="scroll-content" id="scrollContent">
+            <!-- 긴 내용 예시 -->
+            <p>스크롤을 아래로 내려보세요!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+                consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.</p>
+            <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                consectetur nisl nisi euismod nisi.</p>
+            <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                consectetur.</p>
+            <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi
+                euismod nisi.</p>
+            <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                consectetur nisl nisi euismod nisi.</p>
+            <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                consectetur.</p>
+            <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi
+                euismod nisi.</p>
+            <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                consectetur nisl nisi euismod nisi.</p>
+            <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                consectetur.</p>
+            <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi
+                euismod nisi.</p>
+            <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                consectetur nisl nisi euismod nisi.</p>
+            <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                consectetur.</p>
+            <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi
+                euismod nisi.</p>
+            <!-- 추가 더미 텍스트 -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur
+                consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi euismod nisi.</p>
+            <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                consectetur nisl nisi euismod nisi.</p>
+            <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                consectetur.</p>
+            <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi
+                euismod nisi.</p>
+            <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                consectetur nisl nisi euismod nisi.</p>
+            <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                consectetur.</p>
+            <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi
+                euismod nisi.</p>
+            <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                consectetur nisl nisi euismod nisi.</p>
+            <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                consectetur.</p>
+            <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi
+                euismod nisi.</p>
+            <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                consectetur nisl nisi euismod nisi.</p>
+            <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                consectetur.</p>
+            <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi
+                euismod nisi.</p>
+            <p>Aliquam erat volutpat. Etiam euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu
+                consectetur nisl nisi euismod nisi.</p>
+            <p>Morbi non urna nec sapien cursus faucibus. Suspendisse potenti. Etiam euismod, nisi eu consectetur
+                consectetur.</p>
+            <p>Vivamus euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, eu consectetur nisl nisi
+                euismod nisi.</p>
+        </div>
+    </div>
+
+    <a href="#top" style="position:fixed;inset:auto 40px 40px auto;">
+        top
+    </a>
+
+    <script>
+        function getElements() {
+            const topBtn = document.getElementById('scrollTopBtn')
+            const midBtn = document.getElementById('scrollMiddleBtn')
+            const botBtn = document.getElementById('scrollBottomBtn')
+            const info = document.getElementById('scrollY')
+
+            return [topBtn, midBtn, botBtn, info]
+        }
+
+        const [topBtn, midBtn, botBtn, info] = getElements()
+
+        window.addEventListener('scroll', () => {
+            info.textContent = window.scrollY;
+        })
+
+        topBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        })
+        midBtn.addEventListener('click', () => {
+            const mid = document.body.scrollHeight / 2;
+            window.scrollTo({ top: mid, behavior: 'smooth' })
+        })
+        botBtn.addEventListener('click', () => {
+            const bot = document.body.scrollHeight;
+            window.scrollTo({ top: bot, behavior: 'smooth' })
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+아래의 DOM 명령어 찾아보고, 정리해오기
+
+
+1) 클래스 제어
+classList.add()
+classList.remove()
+classList.contain()
+classList.toggle()
+
+2) 요소의 크기/위치
+getBoundingClientRect()
+offsetLeft
+offsetTop
+
+3) 속성 제어
+getAttribute
+setAttribute
+
+4) dataset 으로 접근하기
