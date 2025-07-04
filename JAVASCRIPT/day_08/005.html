@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #d8d8d8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 50px auto;
+            position: relative;
+            height: 500px;
+        }
+
+        img {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./images/irangi_06.png" alt="">
+    </div>
+    <script>
+        const img = document.querySelector('.container img')
+        const imgBox = img.getBoundingClientRect()
+        console.log(imgBox)
+
+        console.log(`img WIDTH :  ${imgBox.width}`)
+        const distance = 10
+        let url = '';
+        window.addEventListener('keydown', (e) => {
+
+            if (e.code === 'ArrowRight') {
+                url = 'ArrowRight'
+                img.style.left = `${img.offsetLeft + distance}px`
+            } else if (e.code === 'ArrowLeft') {
+                url = 'ArrowLeft'
+                img.style.left = `${img.offsetLeft - distance}px`
+            }
+            img.setAttribute('src', `./images/irangi_${url}.png`)
+        })
+    </script>
+</body>
+
+</html>

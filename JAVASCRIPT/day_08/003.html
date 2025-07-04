@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./images/irangi_01.png" alt="어려워요?" class="img1">
+    <div class="btn-container">
+        <button type="button" id="btn1" data-alt="Is it ifficult?">01</button>
+        <button type="button" id="btn2" data-alt="Don't give up">02</button>
+        <button type="button" id="btn3" data-alt="Coffee">03</button>
+    </div>
+    <script>
+        /* Attribute 제어 */
+        const img1 = document.querySelector('.img1')
+        const btns = document.querySelectorAll('.btn-container button')
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const url = `./images/irangi_${btn.textContent}.png`;
+                const alt = btn.dataset.alt;
+                img1.setAttribute('src', url)
+                img1.setAttribute('alt', alt)
+            })
+        }) 
+    </script>
+</body>
+
+</html>

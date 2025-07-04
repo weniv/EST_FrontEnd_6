@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {}
+
+        button:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="btn1">마우스를 올려보세요</button>
+    <button type="button" id="btn2">마우스를 올려보세요</button>
+    <script>
+        // 1) 버튼에 마우스를 올리면 '마우스를 올려보세요' 텍스트를 '마우스 IN' 변경
+        // 마우스를 치우면 원래의 글자로 변경
+
+        const btn1 = document.getElementById('btn1')
+        const btn2 = document.getElementById('btn2')
+
+        function mouseControl(elem) {
+            const defaultMsg = elem.textContent;
+            elem.addEventListener('mouseenter', (e) => {
+                e.target.textContent = 'MOUSE IN'
+            })
+            elem.addEventListener('mouseleave', (e) => {
+                e.target.textContent = defaultMsg;
+            })
+        }
+
+        mouseControl(btn1)
+        mouseControl(btn2)
+    </script>
+</body>
+
+</html>

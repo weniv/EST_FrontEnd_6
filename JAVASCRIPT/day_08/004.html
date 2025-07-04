@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 갤러리 - 과제</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #d8d8d8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 50px auto;
+        }
+
+        .container img {
+            max-width: 100%;
+
+        }
+
+        .detailView {
+            flex: 0 0 auto;
+            width: 300px;
+            position: relative;
+        }
+
+        .description {
+            position: absolute;
+            inset: auto 0 0 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+        }
+
+        .thumbs {}
+
+        .thumbs img {
+            width: 70px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            cursor: pointer;
+        }
+
+        .thumbs img:hover {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="detailView">
+            <img src="./images/irangi_01.png" alt="Is it hard?">
+            <p class="description">Is it hard?</p>
+        </div>
+        <div class="thumbs">
+            <img src="./images/irangi_02.png" alt="Dont give up">
+            <img src="./images/irangi_03.png" alt="Coffee">
+            <img src="./images/irangi_04.png" alt="I am angry">
+            <img src="./images/irangi_05.png" alt="walking">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            height: 2000px;
+            background-color: #fefefe;
+            transition: 0.4s;
+        }
+
+        body.mid {
+            background-color: olive
+        }
+
+        .title {
+            color: tomato
+        }
+
+        .active {
+            background-color: gold;
+        }
+
+        .btnTop {
+            position: fixed;
+            inset: auto 40px 40px auto;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.4s;
+        }
+
+        .btnTop.show {
+            display: flex;
+            animation: moveUp 0.4s ease-in-out;
+
+        }
+
+        @keyframes moveUp {
+            0% {
+                translate: 0 50px;
+                opacity: 0;
+            }
+
+            100% {
+                translate: 0 0;
+                opacity: 1;
+            }
+        }
+
+        .btnTop:hover {
+            background-color: tomato;
+        }
+
+        h1 {
+            position: fixed;
+            inset: 40px auto auto 40px
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">Hello</h1>
+    <a href="#" class="btnTop">TOP</a>
+    <script>
+        const h1 = document.querySelector('.title')
+        const btnTop = document.querySelector('.btnTop')
+
+        h1.textContent = `현재 스크롤위치는 ${window.scrollY}`
+
+        window.addEventListener('scroll', (e) => {
+            const scroll = window.scrollY;
+            h1.textContent = `현재 스크롤위치는 ${scroll}`
+            document.body.classList.toggle('mid', scroll > 400)
+            btnTop.classList.toggle('show', scroll > 100)
+        })
+
+
+        if (h1.classList.contains('title')) {
+            console.log('has title')
+        }
+
+        h1.addEventListener('click', (e) => {
+            e.target.classList.toggle('active')
+        })
+
+
+        /*
+        element.classList.add() 클래스를 추가
+        element.classList.remove() 클래스를 제거
+        element.classList.contains() 클래스존재여부를 Boolean으로 반환
+        element.classList.toggle(class name, condition) 클래스가 없으면 add, 있으면 remove
+        */
+    </script>
+</body>
+
+</html>
