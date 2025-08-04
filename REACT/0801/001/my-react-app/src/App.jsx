@@ -1,14 +1,17 @@
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import Button from './components/Button';
+
 function App() {
-  const x = 1;
-  const y = 2;
-  const z = x + y;
   return (
     <>
-      <p>hello world</p>
-      <p>{x + y}</p>
-      <p>{z}</p>
+      <Header />
+      <Button />
+      <Main />
+      <Footer />
     </>
-  )
+  );
 }
 
 export default App
