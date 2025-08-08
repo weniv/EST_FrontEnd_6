@@ -17,6 +17,7 @@ function A() {
 }
 
 function B() {
+  const [count, setCount] = useState(0);
   let countB = 0;
   function handleClickB() {
     countB++;
@@ -24,7 +25,7 @@ function B() {
   }
   
   return (
-    <TestContext.Provider value={{ countB }}>
+    <TestContext.Provider value={{ count, setCount }}>
       <button onClick={handleClickB}>Click B</button>
       <C/>
     </TestContext.Provider>
@@ -47,15 +48,11 @@ function C() {
 } 
 
 function D() {
-  let { countB } = useContext(TestContext);
-  function handleClickD() {
-    countB++;
-    console.log('D clicked, countB:', countB);
-  }
+  const { count, setCount } = useContext(TestContext);
   return (
     <>
-      <div>나는 실제 D야! B의 Count는 {countB} 이야!</div>
-      <button onClick={handleClickD}>Click D</button>
+      <div>Count: {count}</div>
+      <button onClick={() => setCount(count + 1)}>Increment Count</button>
     </>
   )
 }
