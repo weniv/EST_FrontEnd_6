@@ -1,3 +1,5 @@
+import { createContext, useContext, useState } from "react";
+
 const languages = {
     en: {
         title: "Multi-language App",
@@ -19,6 +21,15 @@ const languages = {
     },
 };
 
-export default function LanguageProvider() {
-    return <></>;
+const LanguageContext = createContext();
+
+function LanguageProvider({ children }) {
+    const [languageState, setLanguageState] = useState("ko");
+
+    const changeLanguage = (lang) => {
+        setLanguageState(lang);
+    };
+    return <LanguageContext.Provider value={{ languageState, changeLanguage, languages }}>{children}</LanguageContext.Provider>;
 }
+
+export { LanguageProvider, LanguageContext };

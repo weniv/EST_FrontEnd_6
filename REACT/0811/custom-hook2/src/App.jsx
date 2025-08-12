@@ -1,11 +1,14 @@
+import Contents from "./Contents";
+import LangSelector from "./LangSelector";
+import { LanguageProvider } from "./LanguageProvider";
 
 function App() {
-
     return (
-        <>
-            Hello Vite-React!
-        </>
-    )
+        <LanguageProvider>
+            <LangSelector />
+            <Contents />
+        </LanguageProvider>
+    );
 }
 
-export default App
+export default App;
