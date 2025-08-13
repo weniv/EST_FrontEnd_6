@@ -12,7 +12,7 @@ export function useScroll() {
             // offsetHeight > 타겟 요소의 전체 높이
 
             setIsBottom(window.innerHeight + document.documentElement.scrollTop + 10 >= document.documentElement.offsetHeight);
-            console.log("scrolling...");
+            // console.log("scrolling...");
         });
     }, []);
 

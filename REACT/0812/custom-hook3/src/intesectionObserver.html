@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const option = {
+                root: null,
+                threshold: 0,
+            };
+
+            const callback = (entries) => {
+                entries.forEach((entry) => {
+                    // 실제 개발을 할때 여기에 원하는 동작 코드
+                    // entry.isIntersection
+                    // entry.intersectionRatio
+                    // entry.target
+                });
+            };
+
+            const observer = new IntersectionObserver(callback, option);
+
+            // 관찰할 요소 지정
+            observer.observe(target);
+
+            // 타겟 관찰 종료
+            observer.unobserve(target);
+
+            // 모든 요소에 대한 관찰 중지
+            observe.disconnect();
+        </script>
+    </body>
+</html>
