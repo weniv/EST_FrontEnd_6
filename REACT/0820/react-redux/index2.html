@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>React App</title>
+    </head>
+    <body>
+        <!-- <div id="root"></div> -->
+        <h1>Product Detail</h1>
+        <h2>딥러닝 개발자 무릎 담요</h2>
+        <span><strong>17,500</strong>원</span>
+        <div id="counter-box">
+            <button type="button" id="minus" disabled>MINUS</button>
+            <span id="number">0</span>
+            <button type="button" id="plus">PLUS</button>
+        </div>
+        <div>총 수량 <strong id="quantity">0</strong></div>
+        <div><strong id="total">0</strong>원</div>
+
+        <script>
+            const plus = document.getElementById("plus");
+            const minus = document.getElementById("minus");
+            const number = document.getElementById("number"); // 수량
+            const quantity = document.getElementById("quantity"); // 페이지 하단에 총 수량
+            const totalPrice = document.getElementById("total"); // 페이지 하단에 총 가격
+
+            const PRICE = 17500;
+
+            let count = 0;
+
+            // UI Update - text
+            const updateResult = (c) => {
+                number.innerText = count;
+                quantity.innerHTML = c;
+                totalPrice.innerHTML = c * PRICE;
+            };
+
+            // State Change
+            const addNumber = () => {
+                count += 1;
+                minus.disabled = false;
+                updateResult(count);
+            };
+
+            // State Change
+            const substractNumber = () => {
+                count -= 1;
+                if (count <= 0) {
+                    minus.disabled = true;
+                }
+                updateResult(count);
+            };
+
+            // Init
+            number.innerHTML = count;
+            updateResult(count);
+
+            // Event
+            plus.addEventListener("click", addNumber);
+            minus.addEventListener("click", substractNumber);
+        </script>
+    </body>
+</html>
