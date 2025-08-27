@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세포 통신 시뮬레이션</title>
+</head>
+
+<body>
+    <h1>생물학적 객체지향 시스템</h1>
+
+    <button onclick="simulation.decreaseBloodSugar()">혈당 감소 (배고픔)</button>
+    <button onclick="simulation.eatFood()">음식 섭취</button>
+
+    <div>
+        <h3>혈액</h3>
+        <div id="blood-status">혈당: 100 mg/dL</div>
+    </div>
+
+    <div>
+        <h3>뇌</h3>
+        <div id="brain-status">상태: 정상</div>
+    </div>
+
+    <div>
+        <h3>위</h3>
+        <div id="stomach-status">위액: 0ml</div>
+    </div>
+
+    <h3>통신 로그</h3>
+    <div id="messageLog"></div>
+
+    <script>
+        // 세포 간 통신을 위한 메신저
+        class CellularMessenger {
+            constructor() {
+                this.listeners = {};
+            }
+
+            subscribe(event, callback) {
+                if (!this.listeners[event]) {
+                    this.listeners[event] = [];
+                }
+                this.listeners[event].push(callback);
+            }
+
+            emit(event, data) {
+                if (this.listeners[event]) {
+                    this.listeners[event].forEach(callback => callback(data));
+                }
+            }
+        }
+
+        // 혈액 클래스
+        class Blood {
+            constructor(messenger) {
+                this.messenger = messenger;
+                this.glucoseLevel = 100;
+            }
+
+            setGlucoseLevel(level) {
+                this.glucoseLevel = level;
+                document.getElementById('blood-status').textContent = `혈당: ${level} mg/dL`;
+
+                if (level < 70) {
+                    this.log(`혈당 낮음: ${level} mg/dL`);
+                    this.messenger.emit('LOW_BLOOD_SUGAR', { level: level });
+                }
+            }
+
+            log(msg) {
+                const log = document.getElementById('messageLog');
+                log.innerHTML = `[혈액] ${msg}<br>` + log.innerHTML;
+            }
+        }
+
+        // 뇌 클래스
+        class Brain {
+            constructor(messenger) {
+                this.messenger = messenger;
+
+                // 저혈당 신호를 받으면 배고픔 감지
+                this.messenger.subscribe('LOW_BLOOD_SUGAR', (data) => {
+                    this.detectHunger(data);
+                });
+            }
+
+            detectHunger(data) {
+                document.getElementById('brain-status').textContent = "상태: 배고픔!";
+                this.log(`저혈당(${data.level}) 감지 → 배고픔`);
+
+                // 위장에 신호 전송
+                this.messenger.emit('HUNGER_SIGNAL', { intensity: 'high' });
+                this.log("위장으로 배고픔 신호 전송");
+            }
+
+            log(msg) {
+                const log = document.getElementById('messageLog');
+                log.innerHTML = `[뇌] ${msg}<br>` + log.innerHTML;
+            }
+        }
+
+        // 위 클래스
+        class Stomach {
+            constructor(messenger) {
+                this.messenger = messenger;
+                this.gastricJuice = 0;
+
+                // 배고픔 신호를 받으면 위액 분비
+                this.messenger.subscribe('HUNGER_SIGNAL', (data) => {
+                    this.secreteGastricJuice(data);
+                });
+
+                // 음식 섭취 신호
+                this.messenger.subscribe('FOOD_INTAKE', () => {
+                    this.digestFood();
+                });
+            }
+
+            secreteGastricJuice(signal) {
+                this.log(`배고픔 신호 수신 (강도: ${signal.intensity})`);
+                this.gastricJuice += 50;
+                document.getElementById('stomach-status').textContent = `위액: ${this.gastricJuice}ml`;
+                this.log("위액 50ml 분비");
+            }
+
+            digestFood() {
+                this.log("음식 소화 시작");
+                this.gastricJuice = 0;
+                document.getElementById('stomach-status').textContent = `위액: ${this.gastricJuice}ml`;
+                this.messenger.emit('NUTRIENTS_ABSORBED', { glucose: 40 });
+                this.log("영양분 흡수 완료");
+            }
+
+            log(msg) {
+                const log = document.getElementById('messageLog');
+                log.innerHTML = `[위] ${msg}<br>` + log.innerHTML;
+            }
+        }
+
+        // 시뮬레이션 관리
+        class BiologicalSimulation {
+            constructor() {
+                this.messenger = new CellularMessenger();
+                this.blood = new Blood(this.messenger);
+                this.brain = new Brain(this.messenger);
+                this.stomach = new Stomach(this.messenger);
+
+                // 영양분 흡수되면 혈당 상승
+                this.messenger.subscribe('NUTRIENTS_ABSORBED', (data) => {
+                    const newLevel = this.blood.glucoseLevel + data.glucose;
+                    this.blood.setGlucoseLevel(newLevel);
+                    document.getElementById('brain-status').textContent = "상태: 정상";
+                });
+            }
+
+            decreaseBloodSugar() {
+                const newLevel = Math.max(50, this.blood.glucoseLevel - 30);
+                this.blood.setGlucoseLevel(newLevel);
+            }
+
+            eatFood() {
+                this.messenger.emit('FOOD_INTAKE', {});
+            }
+        }
+
+        // 시작
+        const simulation = new BiologicalSimulation();
+    </script>
+</body>
+
+</html>
