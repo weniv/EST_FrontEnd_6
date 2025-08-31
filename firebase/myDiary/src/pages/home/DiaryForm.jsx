@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Home.module.css';
 import { useFirestore } from '../../hooks/useFirestore';
 
 export default function DiaryForm({ uid }) {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
-    const { addDocument } = useFirestore('diary');
+    const { addDocument, response } = useFirestore('diary');
 
     const handleData = (event) => {
         if (event.target.id === 'diary-title') {
@@ -19,6 +19,13 @@ export default function DiaryForm({ uid }) {
         event.preventDefault();
         addDocument({ uid, title, text });
     }
+
+    useEffect(() => {
+        if (response.success) {
+            setTitle('');
+            setText('');
+        }
+    }, [response.success]);
 
 
     return (
