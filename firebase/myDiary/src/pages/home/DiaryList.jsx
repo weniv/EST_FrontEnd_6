@@ -4,16 +4,36 @@ import iconEdit from '../../img/icon-edit.svg';
 import iconDelete from '../../img/icon-delete.svg';
 
 export default function DiaryList({ list }) {
+
+    function formattedTime(seconds) {
+        const docDate = new Date(seconds * 1000);
+
+        const year = docDate.getFullYear();
+        const month = String(docDate.getMonth() + 1).padStart(2, 0);
+        const day = String(docDate.getDate()).padStart(2, 0);
+
+        const daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+        const dayOfWeek = daysOfWeek[docDate.getDay()];
+
+        const formattedDate = `${year}.${month}.${day}.${dayOfWeek}`;
+
+        return formattedDate;
+    }
+
+
     return (
         <>
             {
                 list.map((doc) => {
+                    console.log(doc);
                     return (
-                        < li >
+                        < li key={doc.id}>
                             <article className={styles["diary-article"]}>
-                                <h3 className={styles["article-title"]}></h3>
-                                <time className={styles["article-time"]} dateTime="2023-03-15"></time>
-                                <p className={styles["article-content"]}></p>
+                                <h3 className={styles["article-title"]}>{doc.title}</h3>
+                                <time className={styles["article-time"]} dateTime={formattedTime(doc.createdTime
+                                    .seconds).replaceAll('.', '-').slice(0, -4)}>{formattedTime(doc.createdTime
+                                        .seconds)}</time>
+                                <p className={styles["article-content"]}>{doc.text}</p>
 
                                 <div className={styles["button-group"]}>
                                     <button type="button">
