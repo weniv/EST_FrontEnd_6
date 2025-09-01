@@ -19,7 +19,7 @@ export default function Home() {
     const formattedDate = `${year}.${month}.${day}`;
 
     return (
-        <div className="container">
+        <div className={styles.container}>
             <main className={styles["diary-main"]}>
                 <h2 className={styles.heart}>{formattedDate}의 비밀일기</h2>
                 <DiaryForm uid={user.uid} />
