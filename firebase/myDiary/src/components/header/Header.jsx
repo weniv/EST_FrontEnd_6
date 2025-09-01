@@ -34,7 +34,7 @@ export default function Header() {
                     {/* 만약 유저의 상태가 null 이 아니라면  */}
                     {user &&
                         <>
-                            <p className="hello">환영합니다 <strong>{user.displayName}</strong>님!</p>
+                            <p className="hello">환영합니다 어서오세요~ <strong>{user.displayName}</strong>님!</p>
                             <Link to="/" className="btn-logout" onClick={logout}>로그아웃</Link>
                         </>
                     }
