@@ -1,5 +1,6 @@
 import { plus } from "./test.js";
 import android from './android.png';
+// import rabbit from './tiger.png';
 
 
 console.log(plus(2, 3));

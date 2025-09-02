@@ -1,3 +1,4 @@
+/*! 마지막 빌드 시간: 2025. 9. 2. 오전 10:04:10 */
 /*
  * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
  * This devtool is neither made for production nor for readable output files.
@@ -26,7 +27,7 @@ eval("{module.exports = \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEA
   \****************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test.js */ \"./test.js\");\n/* harmony import */ var _android_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./android.png */ \"./android.png\");\n\n\n\n\nalert((0,_test_js__WEBPACK_IMPORTED_MODULE_0__.plus)(2, 3));\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n    document.body.innerHTML = `<img src=\"${_android_png__WEBPACK_IMPORTED_MODULE_1__}\">`;\n});\n\n//# sourceURL=webpack://npmtest/./app.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test.js */ \"./test.js\");\n/* harmony import */ var _android_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./android.png */ \"./android.png\");\n\n\n// import rabbit from './tiger.png';\n\n\nalert((0,_test_js__WEBPACK_IMPORTED_MODULE_0__.plus)(2, 3));\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n    document.body.innerHTML = `<img src=\"${_android_png__WEBPACK_IMPORTED_MODULE_1__}\">`;\n});\n\n//# sourceURL=webpack://npmtest/./app.js?\n}");
 
 /***/ }),
 
