@@ -31,8 +31,21 @@
         <button class="btn-push">적용</button>
     </article>
 
-    <script>
 
+    <script src="TextManager.js"></script>
+    <script src="ViewManager.js"></script>
+    <script>
+        (() => {
+            const textManager = new TextManager();
+
+            const strong = document.querySelector('.viewer');
+            const input = document.querySelector('.inp-txt');
+            const button = document.querySelector('.btn-push');
+
+            const viewManager = new ViewManager(textManager, { strong, input, button });
+
+            viewManager.updateView();
+        })()
 
     </script>
 </body>

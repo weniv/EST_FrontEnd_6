@@ -13,7 +13,7 @@ class ViewManager {
         this.strong = options.strong;
 
         options.button.addEventListener('click', () => {
-
+            this.changeValue();
         });
     }
 
